@@ -1,30 +1,18 @@
 $(function () {
     $("#append").click(function () {
         if ($("#name").val() != "" && $("#email").val() != "") {
+
             var paramsemail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var paramsname = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
+
             if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val())) {
                 if (($("#email").val()).indexOf("gmail.com") > -1 || ($("#email").val()).indexOf("hotmail.com") > -1) {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
+                    alerta('success', 'Se ha agregado correctamente')
 
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Se ha agregado correctamente'
-                    })
-
-
-                    var color = "";
                     var id = 0;
+
+                    /* Colorear al Insertar
+                    var color = "";
                     if (($("#email").val()).indexOf("gmail.com") > -1) {
                         color = "table-warning";
                     }
@@ -32,13 +20,13 @@ $(function () {
                     if (($("#email").val()).indexOf("hotmail.com") > -1) {
                         color = "table-primary";
                     }
-
+                    */
                     const row = document.querySelectorAll("#contenido tr");
                     id = row.length + 1
 
 
                     $("#contenido").append('\
-                    <tr class="'+ color + '"> \
+                    <tr class=""> \
                         <td>'+ id + '</td> \
                         <td>'+ $("#name").val() + '</td>\
                         <td>'+ $("#email").val() + '</td>\
@@ -47,59 +35,48 @@ $(function () {
 
 
                 } else {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
-
-                    Toast.fire({
-                        icon: 'error',
-                        title: 'Su correo no es de dominio @gmail.com ni @hotmail.com'
-                    })
+                    alerta('error', 'Su correo no es de dominio @gmail.com ni @hotmail.com')
                 }
+            } else if (!(paramsemail.test($("#email").val()))) {
+                alerta('warning', 'El correo no es valido, tiene que tener un @');
+            } else if (!(paramsname.test($("#name").val()))) {
+                alerta('warning', 'El nombre no es valido, no puede tener numeros, solo texto');
             } else {
-
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-
-                Toast.fire({
-                    icon: 'warning',
-                    title: 'El nombre o correo no son validos'
-                })
+                alerta('warning', 'El correo o nombre no es valido');
             }
         } else {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
-
-            Toast.fire({
-                icon: 'error',
-                title: 'No se pudo agregar el elemento'
-            })
+            alerta('error', 'No se pudo agregar el elemento')
         }
     });
+
+    $("#scooch").click(function () {
+        const elems=document.querySelectorAll('#contenido tr');
+        elems.forEach((elem)=> {
+            if(elem.outerText.indexOf("gmail.com")>-1){
+                elem.classList.add("table-warning");
+            }
+            if(elem.outerText.indexOf("hotmail.com")>-1){
+                elem.classList.add("table-primary");
+            }
+        });
+    });
+
+    function alerta(icon, title) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: icon,
+            title: title
+        })
+    }
 })
