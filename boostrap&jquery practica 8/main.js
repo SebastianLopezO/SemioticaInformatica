@@ -24,7 +24,7 @@ $(function () {
 
 
                     var color="";
-                    
+                    var id=0;
                     if(($("#email").val()).indexOf("gmail.com")>-1){
                         color="table-warning";
                     }
@@ -33,9 +33,13 @@ $(function () {
                         color="table-primary";
                     }
 
+                    const row=document.querySelectorAll("#contenido tr");
+                    id=row.length+1
+
                     setTimeout(function () {
                         $("#contenido").append('\
                     <tr class="'+color+'"> \
+                        <td>'+id+'</td> \
                         <td>'+ $("#name").val() + '</td>\
                         <td>'+ $("#email").val() + '</td>\
                         <td><button type="button" class="btn btn-warning">Modificar</button><button type="button" class="btn btn-danger">Eliminar</button></td> \
