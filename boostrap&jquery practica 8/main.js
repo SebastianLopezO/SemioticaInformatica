@@ -22,8 +22,9 @@ $(function () {
             setTimeout(function () {
                 $("#contenedor").append('\
                     <tr> \
-                        <td>'+$("#contenedor").val()+'</td>\
-                        <td>'++'</td>\
+                        <td>'+$("#name").val()+'</td>\
+                        <td>'+$("#email").val()+'</td>\
+                        <td><button type="button" class="btn btn-warning">Modificar</button><button type="button" class="btn btn-danger">Eliminar</button></td> \
                     </tr> ');
                 }, 4000);   
         } else {
