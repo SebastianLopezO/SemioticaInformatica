@@ -4,7 +4,7 @@ $(function () {
             var paramsemail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var paramsname = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
             if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val())) {
-                if (($("#email").val()).indexOf("gmail.com") == 1 || ($("#email").val()).indexOf("hotmail.com") == 1) {
+                if (($("#email").val()).indexOf("gmail.com") > -1 || ($("#email").val()).indexOf("hotmail.com") > -1) {
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -25,11 +25,11 @@ $(function () {
 
                     var color="";
                     
-                    if(($("#email").val()).indexOf("gmail.com")==1){
+                    if(($("#email").val()).indexOf("gmail.com")>-1){
                         color="table-warning";
                     }
 
-                    if(($("#email").val()).indexOf("hotmail.com")==1){
+                    if(($("#email").val()).indexOf("hotmail.com")>-1){
                         color="table-primary";
                     }
 
