@@ -3,7 +3,7 @@ $(function () {
         if ($("#name").val() != "" && $("#email").val() != "") {
             var paramsemail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var paramsname = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
-            if (paramsemail.test($("#name").val()) && paramsname.test($("#email").val())) {
+            if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val())) {
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
