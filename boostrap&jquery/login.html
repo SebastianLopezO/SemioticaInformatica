@@ -92,7 +92,7 @@
 <body>
 
     <main class="form-signin w-100 m-auto">
-        <form name="registro" id="registro">
+        <form name="registro" id="registro" class="needs-validation" novalidate>
             <div class="text-center">
                 <img class="mb-4"
                     src="https://media-exp1.licdn.com/dms/image/C4E03AQHLH8Fzdc7Fhg/profile-displayphoto-shrink_200_200/0/1660439212543?e=1671667200&v=beta&t=thcPnkBWOVUQ2YUSeJ0P8oQ9rV7RdNnn89rxkVUhV6c"
@@ -101,12 +101,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="email1" class="form-label">Direccion de Correo</label>
-                <input type="email" class="form-control" id="email1" name="email1" placeholder="name@example.com" >
-            </div>
-            <div class="mb-3">
-                <label for="email2" class="form-label">Confirmar correo</label>
-                <input type="email" class="form-control" id="email2" name="email2" placeholder="name@example.com" >
+                <label for="email" class="form-label">Direccion de Correo</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
             </div>
             <div class="mb-3">
                 <label for="Password1" class="form-label">Contraseña</label>
@@ -124,13 +120,14 @@
                     <input type="checkbox" value="remember-me"> Recordar
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Iniciar Sesion</button>
+            <button class="w-100 btn btn-lg btn-primary" id="submit">Iniciar Sesion</button>
             <p class="mt-5 mb-3 text-muted">© Sebastian's Team 2022</p>
         </form>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="main.js"></script>
 
 </body>
