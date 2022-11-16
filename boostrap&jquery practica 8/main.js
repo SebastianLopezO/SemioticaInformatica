@@ -3,6 +3,14 @@ $(function () {
        createemail();
     });
 
+    $("#lastname").blur(function(){
+        createemail();
+     });
+
+     $("#birth").blur(function(){
+        createemail();
+     });
+
     function createemail(){
         if($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != ""){
             $("#email").val(($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9));
