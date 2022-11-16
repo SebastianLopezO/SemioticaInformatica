@@ -27,7 +27,7 @@ $(function () {
 
                     $("#contenido").append('\
                     <tr class=""> \
-                        <td>'+ id + '</td> \
+                        <th scope="row">'+ id + '</th> \
                         <td>'+ $("#name").val() + '</td>\
                         <td>'+ $("#email").val() + '</td>\
                         <td><button type="button" class="btn btn-warning">Modificar</button><button type="button" class="btn btn-danger">Eliminar</button></td> \
