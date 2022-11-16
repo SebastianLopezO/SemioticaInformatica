@@ -41,13 +41,21 @@
         <h1>Agregar usuario</h1>
       </div>
       <div class="mb-3 dark-bg-text">
-        <label for="name" class="form-label">Nombre Completo: </label>
-        <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre completo sin numeros">
+        <label for="name" class="form-label">Nombre: </label>
+        <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre sin numeros" required>
+      </div>
+      <div class="mb-3 dark-bg-text">
+        <label for="lastname" class="form-label">Apellidos: </label>
+        <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido sin numeros" required>
+      </div>
+      <div class="mb-3 dark-bg-text">
+        <label for="birth" class="form-label">Fecha de nacimiento: </label>
+        <input type="date" class="form-control" id="birth" placeholder="Ingrese su fehca de nacimiento" required>
       </div>
       <div class="mb-3 dark-bg-text">
         <label for="email" class="form-label">Direccion de Correo</label>
         <input type="email" class="form-control" id="email"
-          placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com">
+          placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com" disabled>
       </div>
       <div class="mb-3 dark-bg-text">
         <button class="btn btn-lg btn-primary m-2" id="append">Agregar</button>
