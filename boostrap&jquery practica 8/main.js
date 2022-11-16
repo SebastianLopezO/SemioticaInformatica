@@ -1,11 +1,22 @@
 $(function () {
+    $("#name").blur(function(){
+       createemail();
+    });
+
+    function createemail(){
+        if($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != ""){
+            $("#email").val()=($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9);
+        }
+    }
+
     $("#append").click(function () {
-        if ($("#name").val() != "" && $("#email").val() != "") {
+        if ($("#name").val() != "" && $("#email").val() != "" && $("#lastname").val() != "" && $("#birth").val() != "") {
 
             var paramsemail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var paramsname = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
+            var paramsdate = /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/;
 
-            if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val())) {
+            if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val()) && paramsname.test($("#lastname").val()) && paramsdate.test($("#birth").val())) {
                 if (($("#email").val()).indexOf("gmail.com") > -1 || ($("#email").val()).indexOf("hotmail.com") > -1) {
                     alerta('success', 'Se ha agregado correctamente')
 
@@ -46,11 +57,15 @@ $(function () {
                 alerta('warning', 'El correo no es valido, tiene que tener un @');
             } else if (!(paramsname.test($("#name").val()))) {
                 alerta('warning', 'El nombre no es valido, no puede tener numeros, solo texto');
+            } else if (!(paramsname.test($("#lastname").val()))) {
+                alerta('warning', 'El apellido no es valido, no puede tener numeros, solo texto');
+            } else if (!(paramsdate.test($("#birth").val()))) {
+                alerta('warning', 'la fecha de nacimiento no es valida, formato dd/mm/aaaa');
             } else {
-                alerta('warning', 'El correo o nombre no es valido');
+                alerta('warning', 'Los datos son incorrectos');
             }
         } else {
-            alerta('error', 'No se pudo agregar el elemento')
+            alerta('error', 'Datos vacios, no se pudo agregar el elemento p')
         }
     });
 
