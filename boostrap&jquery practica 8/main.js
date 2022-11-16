@@ -5,7 +5,7 @@ $(function () {
 
     function createemail(){
         if($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != ""){
-            $("#email").val()=($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9);
+            $("#email").val(($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9));
         }
     }
 
