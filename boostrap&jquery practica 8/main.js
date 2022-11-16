@@ -1,18 +1,23 @@
 $(function () {
     $("#name").blur(function(){
+        alert("foco")
        createemail();
     });
 
     $("#lastname").blur(function(){
+        alert("foco")
         createemail();
      });
 
      $("#birth").blur(function(){
+        alert("foco")
         createemail();
      });
 
     function createemail(){
+        alert("si llega")
         if($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != ""){
+            alert("si pasa control")
             $("#email").val(($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9));
         }
     }
