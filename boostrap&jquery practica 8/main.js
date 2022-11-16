@@ -60,6 +60,14 @@ $(function () {
             }
         });
     });
+    
+    $("#reset").click(function () {
+        const elems=document.querySelectorAll('#contenido tr');
+        elems.forEach((elem)=> {
+                elem.classList.remove("table-warning");
+                elem.classList.remove("table-primary");
+        });
+    });
 
     function alerta(icon, title) {
         const Toast = Swal.mixin({
