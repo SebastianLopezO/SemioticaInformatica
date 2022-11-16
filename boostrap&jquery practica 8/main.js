@@ -22,15 +22,20 @@ $(function () {
                     }
                     */
                     const row = document.querySelectorAll("#contenido tr");
-                    id = row.length + 1
+                    if(row.length>0){
+                        id = parseInt(row[row.length-1].id) + 1;
+                    }else{
+                        id=1;
+                    }
+                    
 
 
                     $("#contenido").append('\
-                    <tr class=""> \
+                    <tr class="" id="'+id+'"> \
                         <th scope="row">'+ id + '</th> \
                         <td>'+ $("#name").val() + '</td>\
                         <td>'+ $("#email").val() + '</td>\
-                        <td><button type="button" class="btn btn-warning">Modificar</button><button type="button" class="btn btn-danger">Eliminar</button></td> \
+                        <td><button type="button" class="btn btn-warning m-1">Modificar</button><button type="button" class="btn btn-danger m-1">Eliminar</button></td> \
                     </tr> ');
 
 
@@ -68,6 +73,7 @@ $(function () {
                 elem.classList.remove("table-primary");
         });
     });
+    
 
     function alerta(icon, title) {
         const Toast = Swal.mixin({
