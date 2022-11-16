@@ -53,9 +53,21 @@
         <input type="date" class="form-control" id="birth" placeholder="Ingrese su fehca de nacimiento" required>
       </div>
       <div class="mb-3 dark-bg-text">
-        <label for="email" class="form-label">Direccion de Correo</label>
-        <input type="email" class="form-control" id="email"
-          placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com" disabled>
+        <div class="row align-items-start">
+          <div class="col">
+            <label for="email" class="form-label">Direccion de Correo</label>
+            <input type="email" class="form-control" id="email"
+              placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com" disabled>
+          </div>
+          <div class="col-4">
+            <label for="domain" class="form-label">Dominio</label>
+            <select class="form-select" aria-label="dominio" id="domain">
+              <option selected value="">Seleccione su dominio</option>
+              <option value="@gmail.com">gmail</option>
+              <option value="@hotmail.com">hotmail</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="mb-3 dark-bg-text">
         <button class="btn btn-lg btn-primary m-2" id="append">Agregar</button>

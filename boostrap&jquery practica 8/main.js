@@ -1,24 +1,23 @@
 $(function () {
-    $("#name").blur(function(){
-        alert("foco")
-       createemail();
+    $("#name").blur(function () {
+        createemail();
     });
 
-    $("#lastname").blur(function(){
-        alert("foco")
+    $("#lastname").blur(function () {
         createemail();
-     });
+    });
 
-     $("#birth").blur(function(){
-        alert("foco")
+    $("#birth").blur(function () {
         createemail();
-     });
+    });
+    
+    $("#domain").blur(function () {
+        createemail();
+    });
 
-    function createemail(){
-        alert("si llega")
-        if($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != ""){
-            alert("si pasa control")
-            $("#email").val(($("#name").val())[0]+$("#lastname").val()+($("#birth").val()).subtr(6,9));
+    function createemail() {
+        if ($("#name").val() != "" && $("#lastname").val() != "" && $("#birth").val() != "" && $("#domain").val() != "") {
+            $("#email").val(($("#name").val())[0] + ($("#lastname").val()).replace(/\s+/g, '')  + ($("#birth").val()).substr(0,4)+$("#domain").val());
         }
     }
 
@@ -27,7 +26,7 @@ $(function () {
 
             var paramsemail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             var paramsname = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
-            var paramsdate = /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/;
+            var paramsdate = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 
             if (paramsemail.test($("#email").val()) && paramsname.test($("#name").val()) && paramsname.test($("#lastname").val()) && paramsdate.test($("#birth").val())) {
                 if (($("#email").val()).indexOf("gmail.com") > -1 || ($("#email").val()).indexOf("hotmail.com") > -1) {
@@ -46,18 +45,19 @@ $(function () {
                     }
                     */
                     const row = document.querySelectorAll("#contenido tr");
-                    if(row.length>0){
-                        id = parseInt(row[row.length-1].id) + 1;
-                    }else{
-                        id=1;
+                    if (row.length > 0) {
+                        id = parseInt(row[row.length - 1].id) + 1;
+                    } else {
+                        id = 1;
                     }
-                    
+
 
 
                     $("#contenido").append('\
-                    <tr class="" id="'+id+'"> \
+                    <tr class="" id="'+ id + '"> \
                         <th scope="row">'+ id + '</th> \
                         <td>'+ $("#name").val() + '</td>\
+                        <td>'+ $("#birth").val() + '</td>\
                         <td>'+ $("#email").val() + '</td>\
                         <td><button type="button" class="btn btn-warning m-1">Modificar</button><button type="button" class="btn btn-danger m-1">Eliminar</button></td> \
                     </tr> ');
@@ -83,25 +83,25 @@ $(function () {
     });
 
     $("#scooch").click(function () {
-        const elems=document.querySelectorAll('#contenido tr');
-        elems.forEach((elem)=> {
-            if(elem.outerText.indexOf("gmail.com")>-1){
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            if (elem.outerText.indexOf("gmail.com") > -1) {
                 elem.classList.add("table-warning");
             }
-            if(elem.outerText.indexOf("hotmail.com")>-1){
+            if (elem.outerText.indexOf("hotmail.com") > -1) {
                 elem.classList.add("table-primary");
             }
         });
     });
-    
+
     $("#reset").click(function () {
-        const elems=document.querySelectorAll('#contenido tr');
-        elems.forEach((elem)=> {
-                elem.classList.remove("table-warning");
-                elem.classList.remove("table-primary");
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            elem.classList.remove("table-warning");
+            elem.classList.remove("table-primary");
         });
     });
-    
+
 
     function alerta(icon, title) {
         const Toast = Swal.mixin({
