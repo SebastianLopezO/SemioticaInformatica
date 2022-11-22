@@ -7,9 +7,13 @@ $(function () {
     });
 
     $("#send").click(function () {
-        sessionStorage.setItem("name", $("#name").val())
-        sessionStorage.setItem("age", $("#age").val())
-        window.location.href = "usuario.html";
+        if($("#name").val()!="" && $("#age").val()!=""){
+            sessionStorage.setItem("name", $("#name").val())
+            sessionStorage.setItem("age", $("#age").val())
+            window.location.href = "usuario.html";
+        }else{
+            
+        }
     });
 
     $("#contenedor").append("<h1>test</h1>"+sessionStorage.name+sessionStorage.age);
