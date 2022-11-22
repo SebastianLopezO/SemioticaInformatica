@@ -5,9 +5,15 @@ function check(e) {
     if (tecla == 8) {
         return true;
     }
-
-    // Patrón de entrada, en este caso solo acepta numeros y letras
-    patron = /[A-Za-z0-9]/;
+    patron = /^[a-zA-Z ]+(,[a-zA-Z ]+)*$/;
     tecla_final = String.fromCharCode(tecla);
     return patron.test(tecla_final);
 }
+
+$(function () {
+    $("#scooch").click(function () {
+        var age=Math.round(Math.random()*(99-1)+1)
+        $("#scooch").val(age)
+    });
+
+});
