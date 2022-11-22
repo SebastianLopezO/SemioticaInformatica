@@ -6,4 +6,8 @@ $(function () {
         $("#name").val("Usuario"+id)
     });
 
+    $("#send").click(function () {
+        window.location.href = "usuario.html";
+    });
+
 });
