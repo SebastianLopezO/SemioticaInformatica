@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastian Lopez Osorno</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> 
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 
@@ -42,7 +43,7 @@
             </div>
             <div class="mb-3 dark-bg-text">
                 <label for="name" class="form-label">Nombre Completo: </label>
-                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre completos" required>
+                <input type="text" class="form-control" onkeypress="return check(event)" id="name" placeholder="Ingrese su nombre completos" required>
             </div>
             <div class="mb-3 dark-bg-text">
                 <label for="birth" class="form-label">Edad: </label>
