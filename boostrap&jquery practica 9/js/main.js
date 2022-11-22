@@ -7,7 +7,10 @@ $(function () {
     });
 
     $("#send").click(function () {
+        sessionStorage.setItem("name", $("#name").val())
+        sessionStorage.setItem("age", $("#age").val())
         window.location.href = "usuario.html";
     });
 
+    $("#contenedor").append("<h1>test</h1>");
 });
