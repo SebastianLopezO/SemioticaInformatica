@@ -23,7 +23,7 @@ $(function () {
     $("#contenedor").append('\
     <div class="col-md-4 d-flex justify-content-center align-items-center mb-5"> \
         <div class="card" style="width: 18rem; background-color: #202020;"> \
-            <img src="'+sessionStorage.age>=18?"/img/user2.png":"/img/user1.png"+'" class="card-img-top" alt = "..."> \
+            <img src="'+sessionStorage.age>=18?document.write("/img/user2.png"):document.write("/img/user1.png")+'" class="card-img-top" alt = "..."> \
             <div class="card-body"> \
                 <h5 class="card-title">'+ sessionStorage.name + '</h5> \
                 <p class="card-text">'+ sessionStorage.age + '</p> \
