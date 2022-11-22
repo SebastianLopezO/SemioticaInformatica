@@ -12,5 +12,5 @@ $(function () {
         window.location.href = "usuario.html";
     });
 
-    $("#contenedor").append("<h1>test</h1>");
+    $("#contenedor").append("<h1>test</h1>"+sessionStorage.name+sessionStorage.age);
 });
