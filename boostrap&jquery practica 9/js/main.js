@@ -23,7 +23,6 @@ $(function () {
 
     var img=""
     var type=""
-    var sex=""
     if(sessionStorage.age>=18){
         sessionStorage.sex=="masculino"?img="img/man.png":img="img/woman.png"
         type ="Mayor"
@@ -34,7 +33,7 @@ $(function () {
 
     $("#contenedor").append('\
     <div class="col d-flex justify-content-center align-items-center mb-5"> \
-        <div class="card" style="width: 18rem; background-color: #202020;"> \
+        <div class="card '+sessionStorage.sex+'" style="width: 18rem;"> \
             <img src="'+img+'" class="card-img-top" alt = "..."> \
             <div class="card-body"> \
                 <h5 class="card-title">'+ sessionStorage.name + '</h5> \
