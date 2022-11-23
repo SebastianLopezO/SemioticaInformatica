@@ -3,12 +3,16 @@
     margin: 0;
 }
 
-.femenino{
+.card{
+    background: #212121;
+}
+
+.card.femenino{
     background: #18356B;
     color: #7CA4EE;
 }
 
-.masculino{
+.card.masculino{
     background:#394d2c;
     color:#D3FF7A
 }
