@@ -41,7 +41,7 @@ $(function () {
                                         <img src="'+ img + '" class="card-img-top" alt = "..."> \
                                         <div class="card-body"> \
                                             <h5 class="card-title">'+ name + '</h5> \
-                                            <p class="card-text">El usuario con el nombre '+ name + " con sexo " + sex + " tiene " + age + " años, por lo cual es " + type + '</p> \
+                                            <p class="card-text">El usuario con el nombre '+ name + " con sexo " + sex + " tiene " + age + " años, por lo cual es " + type + 'porque nacio en'+date+'</p> \
                                             <a href="#" class="btn btn-primary">Ver</a> \
                                         </div> \
                                     </div > \
@@ -67,7 +67,7 @@ $(function () {
 
     $("#send").click(function () {
         if ($("#name").val() != "" && $("#age").val() != "" && $("#sex").val() != "") {
-            var data = { "name": $("#name").val(), "age": $("#age").val(), "sex": $("#sex").val() }
+            var data = { "name": $("#name").val(), "age": $("#age").val(), "sex": $("#sex").val(), "date": $("#birth").val() }
             sessionStorage.setItem(sessionStorage.length + 1, JSON.stringify(data))
             alerta('success', 'Los datos han sido almacenados, redirigiendo');
 
@@ -101,7 +101,7 @@ $(function () {
                                         <img src="'+ img + '" class="card-img-top" alt = "..."> \
                                         <div class="card-body"> \
                                             <h5 class="card-title">'+ elem.name + '</h5> \
-                                            <p class="card-text">El usuario con el nombre '+ elem.name + " con sexo " + elem.sex + " tiene " + elem.age + " años, por lo cual es " + type + '</p> \
+                                            <p class="card-text">El usuario con el nombre '+ elem.name + " con sexo " + elem.sex + " tiene " + elem.age + " años, por lo cual es " + type + 'porque nacio el'+elem.date+'</p> \
                                             <a href="#" class="btn btn-primary">Ver</a> \
                                         </div> \
                                     </div > \
