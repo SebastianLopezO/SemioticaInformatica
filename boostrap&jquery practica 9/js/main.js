@@ -1,47 +1,50 @@
 $(function () {
     $("#generate").click(function () {
-        var age=Math.round(Math.random()*(30-10)+10)
-        var id=Math.round(Math.random()*(10-1)+1)
-        var sex=Math.round(Math.random()*(2-1)+1)
+        var age = Math.round(Math.random() * (30 - 10) + 10)
+        var id = Math.round(Math.random() * (10 - 1) + 1)
+        var sex = Math.round(Math.random() * (2 - 1) + 1)
         $("#age").val(age)
-        $("#name").val("Usuario"+id)
-        sex==1?$("#sex").val("masculino"):$("#sex").val("femenino")
+        $("#name").val("Usuario" + id)
+        sex == 1 ? $("#sex").val("masculino") : $("#sex").val("femenino")
     });
 
     $("#send").click(function () {
-        if($("#name").val()!="" && $("#age").val()!="" && $("#sex").val()!=""){
-            sessionStorage.setItem("name", $("#name").val())
-            sessionStorage.setItem("age", $("#age").val())
-            sessionStorage.setItem("sex", $("#sex").val())
+        if ($("#name").val() != "" && $("#age").val() != "" && $("#sex").val() != "") {
+            var data = { "name": $("#name").val(), "age": $("#age").val(), "sex": $("#sex").val() }
+            sessionStorage.setItem(sessionStorage.length + 1, JSON.stringify(data))
             alerta('success', 'Los datos han sido almacenados, redirigiendo');
-            
-            setTimeout(() => {  window.location.href = "usuario.html"; }, 4000);
-        }else{
+
+            setTimeout(() => { window.location.href = "usuario.html"; }, 4000);
+        } else {
             alerta('error', 'Los datos son incorrectos');
         }
     });
 
-    var img=""
-    var type=""
-    if(sessionStorage.age>=18){
-        sessionStorage.sex=="masculino"?img="img/man.png":img="img/woman.png"
-        type ="Mayor"
-    }else{
-        sessionStorage.sex=="masculino"?img="img/boy.png":img="img/girl.png"
-        type ="Menor"
-    }
+    if (window.location.href.includes("usuario.html")) {
+        for (let x = 1; x <= sessionStorage.length; x++) {
+            var elem = JSON.parse(sessionStorage[x])
+            var img = ""
+            var type = ""
+            if (elem.age >= 18) {
+                elem.sex == "masculino" ? img = "img/man.png" : img = "img/woman.png"
+                type = "Mayor"
+            } else {
+                elem.sex == "masculino" ? img = "img/boy.png" : img = "img/girl.png"
+                type = "Menor"
+            }
 
-    $("#contenedor").append('\
-    <div class="col d-flex justify-content-center align-items-center mb-5"> \
-        <div class="card '+sessionStorage.sex+'" style="width: 18rem;"> \
-            <img src="'+img+'" class="card-img-top" alt = "..."> \
-            <div class="card-body"> \
-                <h5 class="card-title">'+ sessionStorage.name + '</h5> \
-                <p class="card-text">El usuario con el nombre '+ sessionStorage.name +" con sexo "+sessionStorage.sex+" tiene "+ sessionStorage.age +" años, por lo cual es "+type+ '</p> \
-                <a href="#" class="btn btn-primary">Ver</a> \
-            </div> \
-        </div > \
-    </div> ');
+            $("#contenedor").append('<div class="col d-flex justify-content-center align-items-center mb-5"> \
+                                    <div class="card '+ elem.sex + '" style="width: 18rem;"> \
+                                        <img src="'+ img + '" class="card-img-top" alt = "..."> \
+                                        <div class="card-body"> \
+                                            <h5 class="card-title">'+ elem.name + '</h5> \
+                                            <p class="card-text">El usuario con el nombre '+ elem.ame + " con sexo " + elem.sex + " tiene " + elem.age + " años, por lo cual es " + type + '</p> \
+                                            <a href="#" class="btn btn-primary">Ver</a> \
+                                        </div> \
+                                    </div > \
+                                </div> ');
+        }
+    }
 
     function alerta(icon, title) {
         const Toast = Swal.mixin({
