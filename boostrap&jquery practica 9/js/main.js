@@ -42,12 +42,18 @@ $(function () {
     }
 
     $("#generate").click(function () {
-        var age = Math.round(Math.random() * (30 - 10) + 10)
-        var id = Math.round(Math.random() * (10 - 1) + 1)
-        var sex = Math.round(Math.random() * (2 - 1) + 1)
+        let day=Math.round(Math.random()*(28-1)+1)
+        let month=Math.round(Math.random()*(12-1)+1)
+        let year=Math.round(Math.random()*(2021-1980)+1980)
+        let date=new Date(year,month,day)
+
+        let age = Number.parseInt(new Date().getFullYear()-date.getFullYear())
+        let id = Math.round(Math.random() * (10 - 1) + 1)
+        let sex = Math.round(Math.random() * (2 - 1) + 1)
         $("#age").val(age)
         $("#name").val("Usuario" + id)
         sex == 1 ? $("#sex").val("masculino") : $("#sex").val("femenino")
+        $("#birth").val(date.toJSON())
         preview();
     });
 
