@@ -48,6 +48,7 @@ $(function () {
         $("#age").val(age)
         $("#name").val("Usuario" + id)
         sex == 1 ? $("#sex").val("masculino") : $("#sex").val("femenino")
+        preview();
     });
 
     $("#send").click(function () {
