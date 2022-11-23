@@ -43,20 +43,26 @@
             </div>
             <div class="mb-3 dark-bg-text">
                 <label for="name" class="form-label">Nombre Completo: </label>
-                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre completos" required
-                    disabled>
+                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre completos" required>
             </div>
             <div class="mb-3 dark-bg-text">
                 <label for="age" class="form-label">Edad: </label>
-                <input type="number" class="form-control" id="age" placeholder="Ingrese su Edad" required disabled>
+                <input type="number" class="form-control" id="age" placeholder="Ingrese su Edad" required>
             </div>
             <div class="mb-3 dark-bg-text">
-                <label for="sex" class="form-label">Sexo</label>
-                <select class="form-select" aria-label="sex" id="sex" disabled>
-                    <option selected value="">Seleccione su sexo</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                </select>
+                <div class="row align-items-start"></div>
+                    <div class="col">
+                        <label for="sex" class="form-label">Sexo</label>
+                        <select class="form-select" aria-label="sex" id="sex" required>
+                            <option selected value="">Seleccione su sexo</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <img src="img/boy.png">
+                    </div>
+                </div>
             </div>
             <div class="mb-3 dark-bg-text">
                 <button class="btn btn-lg btn-primary m-2" id="send">Enviar</button>
