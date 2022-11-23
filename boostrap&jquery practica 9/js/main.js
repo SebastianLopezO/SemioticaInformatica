@@ -53,7 +53,7 @@ $(function () {
         $("#age").val(age)
         $("#name").val("Usuario" + id)
         sex == 1 ? $("#sex").val("masculino") : $("#sex").val("femenino")
-        $("#birth").val(date.toJSON())
+        $("#birth").val(date.toISOString().substr(0,10))
         preview();
     });
 
