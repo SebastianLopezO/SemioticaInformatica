@@ -25,6 +25,7 @@ $(function () {
                                         </div> \
                                     </div > \
                                 </div> ');
+        return true;
     }
 
     $("#generate").click(function () {
