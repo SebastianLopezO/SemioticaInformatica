@@ -1,15 +1,15 @@
 $(function () {
 
 
-    $("#name").blur(function () {
+    $("#name").change(function () {
         preview();
     });
     
-    $("#age").blur(function () {
+    $("#age").change(function () {
         preview();
     });
 
-    $("#sex").blur(function () {
+    $("#sex").change(function () {
         preview();
     });
     
