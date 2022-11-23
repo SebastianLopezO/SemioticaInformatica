@@ -6,13 +6,8 @@ $(function () {
     });
 
     $("#birth").change(function () {
-        let day=Math.round(Math.random()*(28-1)+1)
-        let month=Math.round(Math.random()*(12-1)+1)
-        let year=Math.round(Math.random()*(2021-1980)+1980)
-        let date=new Date(year,month,day)
-
+        var date=new Date($("#birth").val())
         let age = Number.parseInt(new Date().getFullYear()-date.getFullYear())
-        $("#birth").val(date.toISOString().substr(0,10))
         preview();
     });
 
