@@ -8,6 +8,7 @@ $(function () {
     $("#birth").change(function () {
         var date=new Date($("#birth").val())
         let age = Number.parseInt(new Date().getFullYear()-date.getFullYear())
+        $("#age").val(age)
         preview();
     });
 
