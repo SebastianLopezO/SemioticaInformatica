@@ -19,7 +19,13 @@ $(function () {
             alerta('error', 'Los datos son incorrectos');
         }
     });
-
+    
+    $("#clear").click(function () {
+        sessionStorage.clear();
+        alerta('success', 'Se han eliminado los datos');
+        setTimeout(() => { location.reload()},4000);
+    });
+    
     if (window.location.href.includes("usuario.html")) {
         for (let x = 1; x <= sessionStorage.length; x++) {
             var elem = JSON.parse(sessionStorage[x])
@@ -45,6 +51,8 @@ $(function () {
                                 </div> ');
         }
     }
+    
+    
 
     function alerta(icon, title) {
         const Toast = Swal.mixin({
