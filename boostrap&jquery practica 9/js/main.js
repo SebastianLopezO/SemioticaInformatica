@@ -1,5 +1,18 @@
 $(function () {
 
+
+    $("#name").blur(function () {
+        preview();
+    });
+    
+    $("#age").blur(function () {
+        preview();
+    });
+
+    $("#sex").blur(function () {
+        preview();
+    });
+    
     function preview(){
         let name=$("#name").val();
         let age=$("#age").val();
