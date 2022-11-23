@@ -28,7 +28,7 @@ $(function () {
             type = "Menor"
         }
 
-        $("#preview").append('<div class="col d-flex justify-content-center align-items-center mb-5"> \
+        $("#preview").html('<div class="col d-flex justify-content-center align-items-center mb-5"> \
                                     <div class="card '+ sex + '" style="width: 18rem;"> \
                                         <img src="'+ img + '" class="card-img-top" alt = "..."> \
                                         <div class="card-body"> \
