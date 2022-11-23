@@ -62,7 +62,7 @@ $(function () {
     });
 
     $("#send").click(function () {
-        if ($("#name").val() != "" && $("#age").val() != "" && $("#sex").val() != "") {
+        if ($("#name").val() != "" && $("#age").val() != "" && $("#sex").val() != "" && $("#birth").val() != "") {
             var data = { "name": $("#name").val(), "age": $("#age").val(), "sex": $("#sex").val(), "date": $("#birth").val() }
             sessionStorage.setItem(sessionStorage.length + 1, JSON.stringify(data))
             alerta('success', 'Los datos han sido almacenados, redirigiendo');
