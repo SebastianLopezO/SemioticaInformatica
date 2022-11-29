@@ -25,8 +25,8 @@ $(function () {
     });
 
     function mostrar(user,age,gender){
-            $("#contenido").append('<tr class="" id="'+ (nums.length+1) + '"> \
-                                        <th scope="row">'+ (nums.length+1) + '</th> \
+            $("#contenido").append('<tr class="" id="'+ (users.length+1) + '"> \
+                                        <th scope="row">'+ (users.length+1) + '</th> \
                                         <td>Usuario'+ user + '</td>\
                                         <td>'+ age + '</td>\
                                         <td>'+ gender + '</td>\
