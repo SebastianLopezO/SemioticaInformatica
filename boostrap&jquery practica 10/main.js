@@ -1,6 +1,10 @@
 $(function () {
     var users=[]
     $("#generate").click(function () {
+
+        $("#min").prop("disabled",true);
+        $("#max").prop("disabled",true);
+
         let max=parseInt($("#max").val());
         let min=parseInt($("#min").val());
         do{
