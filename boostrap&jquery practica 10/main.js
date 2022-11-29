@@ -30,15 +30,21 @@ $(function () {
     });
 
     $("#cont").click(function () {
+        let man=0
+        let woman=0
         const elems = document.querySelectorAll('#contenido tr');
         elems.forEach((elem) => {
             if (elem.outerText.indexOf("femenino") > -1) {
+                woman++;
                 elem.classList.add("table-warning");
             }
             if (elem.outerText.indexOf("masculino") > -1) {
+                men++
                 elem.classList.add("table-primary");
             }
         });
+
+        alerta("info","Existen "+man+" hombres y "+woman+" mujeres")
     });
 
     function mostrar(user,age,gender){
