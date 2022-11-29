@@ -77,15 +77,11 @@ $(function () {
 
     function cartel(title, text) {
         const Toast = Swal.fire({
-            title: 'Informacion',
-            text: "You won't be able to revert this!",
+            title: title,
+            text: text,
             icon: 'info',
         })
-
-        Toast.fire({
-            icon: icon,
-            title: title
-        })
+        ;
     }
 
 });
