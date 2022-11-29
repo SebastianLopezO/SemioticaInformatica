@@ -1,30 +1,36 @@
 $(function () {
-    var nums=[]
+    var users=[]
     $("#generate").click(function () {
         let max=parseInt($("#max").val());
         let min=parseInt($("#min").val());
         do{
             var num=Math.round(Math.random()*(max-min)+min)
-            if(nums.indexOf(num)<0 || nums.length==0){
-                nums.push(num);
-                mostrar();
+            if(users.indexOf(num)<0 || users.length==0){
+                users.push(num);
+                let age=Math.round(Math.random()*(40-1)+1)
+                let gender=(["masculino","femenino"])[(Math.round(Math.random()*(2-1)+1))-1]
+                mostrar(num,age,gender);
                 $("#number").val(num);
                 break;
-            }else if(nums.length==max){
+            }else if(users.length==max){
                 alerta("error","La lista ya esta llena");
                 break;
             }
         }while(true);
     });
 
-    function mostrar(){
+    $("#generate").click(function () {
+        users=[]
         $("#contenido").html("");
-        for(let i=0;i<nums.length;i++){
-            $("#contenido").append('<tr class="" id="'+ (i+1) + '"> \
-                                        <th scope="row">'+ (i+1) + '</th> \
-                                        <td>'+ nums[i] + '</td>\
+    });
+
+    function mostrar(user,age,gender){
+            $("#contenido").append('<tr class="" id="'+ nums.length + '"> \
+                                        <th scope="row">'+ nums.length + '</th> \
+                                        <td>Usuario'+ user + '</td>\
+                                        <td>'+ age + '</td>\
+                                        <td>'+ gender + '</td>\
                                     </tr>')
-        }
     }
 
     function alerta(icon, title) {
