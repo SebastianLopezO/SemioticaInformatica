@@ -6,7 +6,7 @@ $(function () {
         do{
             var num=Math.round(Math.random()*(max-min)+min)
             if(nums.indexOf(num)<0 || nums.length==0){
-                nums.push();
+                nums.push(num);
                 break;
             }else if(nums.length()==max){
                 alerta("error","La lista ya esta llena");
