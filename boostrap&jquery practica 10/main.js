@@ -21,7 +21,7 @@ $(function () {
         for(let i=0;i<nums.length;i++){
             $("#contenido").append('<tr class="" id="'+ (i+1) + '"> \
                                         <th scope="row">'+ (i+1) + '</th> \
-                                        <td>'+ lista[i] + '</td>\
+                                        <td>'+ nums[i] + '</td>\
                                     </tr>')
         }
     }
