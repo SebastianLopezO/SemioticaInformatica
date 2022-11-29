@@ -14,6 +14,13 @@ $(function () {
         }while(true);
     });
 
+    for(let i=0;i<nums.length;i++){
+        $("#contenedor").append('<tr class="" id="'+ (i+1) + '"> \
+                                    <th scope="row">'+ (i+1) + '</th> \
+                                    <td>'+ lista[i] + '</td>\
+                                </tr>')
+    }
+
     function alerta(icon, title) {
         const Toast = Swal.mixin({
             toast: true,
