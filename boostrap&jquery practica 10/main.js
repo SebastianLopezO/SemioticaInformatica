@@ -79,11 +79,8 @@ $(function () {
             text: text,
             icon: 'info',
             showConfirmButton: true,
-            timer: 3000,
+            timer: 5000,
             timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-            }
         })
         ;
     }
