@@ -44,7 +44,7 @@ $(function () {
             }
         });
 
-        alerta("info","Existen "+man+" hombres y "+woman+" mujeres")
+        cartel("Cantidad de Personas","Existen "+man+" hombres y "+woman+" mujeres")
     });
 
     function mostrar(user,age,gender){
@@ -67,6 +67,19 @@ $(function () {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
+        })
+
+        Toast.fire({
+            icon: icon,
+            title: title
+        })
+    }
+
+    function cartel(title, text) {
+        const Toast = Swal.fire({
+            title: 'Informacion',
+            text: "You won't be able to revert this!",
+            icon: 'info',
         })
 
         Toast.fire({
