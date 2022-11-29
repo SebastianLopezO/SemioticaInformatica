@@ -25,6 +25,7 @@ $(function () {
     $("#reset").click(function () {
         users=[]
         $("#contenido").html("");
+        $("#max").prop("disabled",false);
     });
 
     $("#cont").click(function () {
