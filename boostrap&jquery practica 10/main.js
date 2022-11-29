@@ -18,8 +18,9 @@ $(function () {
     });
 
     function mostrar(){
+        $("#contenido").html("");
         for(let i=0;i<nums.length;i++){
-            $("#contenido").html('<tr class="" id="'+ (i+1) + '"> \
+            $("#contenido").append('<tr class="" id="'+ (i+1) + '"> \
                                         <th scope="row">'+ (i+1) + '</th> \
                                         <td>'+ nums[i] + '</td>\
                                     </tr>')
