@@ -1,8 +1,8 @@
 $(function () {
     var nums=[]
     $("#generate").click(function () {
-        let max=$("#max").val();
-        let min=$("#min").val();
+        let max=parseInt($("#max").val());
+        let min=parseInt($("#min").val());
         do{
             var num=Math.round(Math.random()*(max-min)+min)
             if(nums.indexOf(num)<0 || nums.length==0){
