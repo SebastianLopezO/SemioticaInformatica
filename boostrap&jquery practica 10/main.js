@@ -5,7 +5,7 @@ $(function () {
         let min=parseInt($("#min").val());
         do{
             var num=Math.round(Math.random()*(max-min)+min)
-            if(nums.indexOf(num)<0 || nums.length==0){
+            if(nums.indexOf(num)<0 || nums.length()==0){
                 nums.push(num);
                 break;
             }else if(nums.length()==max){
