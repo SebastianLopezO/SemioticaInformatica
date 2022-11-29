@@ -13,7 +13,10 @@ $(function () {
                 users.push(num);
                 let age=Math.round(Math.random()*(40-1)+1)
                 let gender=(["masculino","femenino"])[(Math.round(Math.random()*(2-1)+1))-1]
-                mostrar(num,age,gender);
+                let color=""
+                gender=="masculino"?color="table-info":color="table-danger";
+
+                mostrar(num,age,gender,color);
                 $("#number").val(num);
                 break;
             }else if(users.length==max){
@@ -28,8 +31,8 @@ $(function () {
         $("#contenido").html("");
     });
 
-    function mostrar(user,age,gender){
-            $("#contenido").append('<tr class="" id="'+ (users.length) + '"> \
+    function mostrar(user,age,gender,color){
+            $("#contenido").append('<tr class="'+color+'" id="'+ (users.length) + '"> \
                                         <th scope="row">'+ (users.length) + '</th> \
                                         <td>Usuario'+ user + '</td>\
                                         <td>'+ age + '</td>\
