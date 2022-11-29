@@ -1,12 +1,10 @@
 $(function () {
     var users=[]
     $("#generate").click(function () {
-
-        $("#min").prop("disabled",true);
         $("#max").prop("disabled",true);
 
         let max=parseInt($("#max").val());
-        let min=parseInt($("#min").val());
+        let min=1;
         do{
             var num=Math.round(Math.random()*(max-min)+min)
             if(users.indexOf(num)<0 || users.length==0){
