@@ -10,6 +10,7 @@ $(function () {
                 break;
             }else if(nums.length==max){
                 alerta("error","La lista ya esta llena");
+                break;
             }
         }while(true);
     });
