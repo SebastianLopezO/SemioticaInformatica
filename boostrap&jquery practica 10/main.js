@@ -14,7 +14,7 @@ $(function () {
                 let age=Math.round(Math.random()*(40-1)+1)
                 let gender=(["masculino","femenino"])[(Math.round(Math.random()*(2-1)+1))-1]
                 let color=""
-                gender=="masculino"?color="table-info":color="table-danger";
+                gender=="masculino"?color="table-info":color="table-warning";
 
                 mostrar(num,age,gender,color);
                 $("#number").val(num);
