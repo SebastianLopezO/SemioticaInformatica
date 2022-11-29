@@ -7,7 +7,8 @@ $(function () {
             var num=Math.round(Math.random()*(max-min)+min)
             if(nums.indexOf(num)<0 || nums.length==0){
                 nums.push(num);
-                $("#number").val(num)
+                mostrar();
+                $("#number").val(num);
                 break;
             }else if(nums.length==max){
                 alerta("error","La lista ya esta llena");
@@ -16,11 +17,13 @@ $(function () {
         }while(true);
     });
 
-    for(let i=0;i<nums.length;i++){
-        $("#contenedor").append('<tr class="" id="'+ (i+1) + '"> \
-                                    <th scope="row">'+ (i+1) + '</th> \
-                                    <td>'+ lista[i] + '</td>\
-                                </tr>')
+    function mostrar(){
+        for(let i=0;i<nums.length;i++){
+            $("#contenido").append('<tr class="" id="'+ (i+1) + '"> \
+                                        <th scope="row">'+ (i+1) + '</th> \
+                                        <td>'+ lista[i] + '</td>\
+                                    </tr>')
+        }
     }
 
     function alerta(icon, title) {
