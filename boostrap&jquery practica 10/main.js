@@ -19,7 +19,7 @@ $(function () {
         }while(true);
     });
 
-    $("#generate").click(function () {
+    $("#reset").click(function () {
         users=[]
         $("#contenido").html("");
     });
