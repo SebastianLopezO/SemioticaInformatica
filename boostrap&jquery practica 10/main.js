@@ -39,7 +39,7 @@ $(function () {
                 elem.classList.add("table-warning");
             }
             if (elem.outerText.indexOf("masculino") > -1) {
-                men++
+                man++;
                 elem.classList.add("table-primary");
             }
         });
