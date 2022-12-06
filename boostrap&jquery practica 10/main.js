@@ -47,8 +47,6 @@ $(function () {
     });
 
     $("#travel").click(function () {
-        let man=0
-        let woman=0
         const elems = document.querySelectorAll('#contenido tr');
         elems.forEach((elem) => {
             var data=elem.querySelector(".age");
