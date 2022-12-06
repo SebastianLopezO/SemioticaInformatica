@@ -34,38 +34,38 @@ $(function () {
 
             switch (option){
                 case "":
-                    $("."+id+"").show();
+                    $("#"+id+"").show();
                     break;
                 case "mayores":
                     if(age>=18){
-                        $("."+id+"").show();
+                        $("#"+id+"").show();
                     }else{
-                        $("."+id+"").hide();
+                        $("#"+id+"").hide();
                     }
                     break;
                 case "menores":
                     if(age<18){
-                        $("."+id+"").show();
+                        $("#"+id+"").show();
                     }else{
-                        $("."+id+"").hide();
+                        $("#"+id+"").hide();
                     }
                     break;
                 case "mujeres":
                     if(elem.outerText.indexOf("femenino") > -1){
-                        $("."+id+"").show();
+                        $("#"+id+"").show();
                     }else{
-                        $("."+id+"").hide();
+                        $("#"+id+"").hide();
                     }
                     break;
                 case "hombres":
                     if(elem.outerText.indexOf("masculino") > -1){
-                        $("."+id+"").show();
+                        $("#"+id+"").show();
                     }else{
-                        $("."+id+"").hide();
+                        $("#"+id+"").hide();
                     }
                     break;
                 default:
-                    $("."+id+"").show();
+                    $("#"+id+"").show();
                     break;
             }
 
