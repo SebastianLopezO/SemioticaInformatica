@@ -23,7 +23,7 @@ $(function () {
     });
 
     $("#filter").change(function () {
-        alert("Filtrando");
+        alerta("success","Datos Filtrados");
         var option=$("#filter").val();
 
         const elems = document.querySelectorAll('#contenido tr');
