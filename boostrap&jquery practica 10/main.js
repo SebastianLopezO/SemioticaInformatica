@@ -22,6 +22,55 @@ $(function () {
         }while(true);
     });
 
+    $("#filter").change(function () {
+        var option=$("#filter").val();
+
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            var id=elem.getAttribute('id');
+            var data=elem.querySelector(".age");
+            var age=parseInt(data.outerText)
+
+            switch (option){
+                case "":
+                    $("."+id+"").show();
+                    break;
+                case "mayores":
+                    if(age>=18){
+                        $("."+id+"").show();
+                    }else{
+                        $("."+id+"").hide();
+                    }
+                    break;
+                case "menores":
+                    if(age<18){
+                        $("."+id+"").show();
+                    }else{
+                        $("."+id+"").hide();
+                    }
+                    break;
+                case "mujeres":
+                    if(elem.outerText.indexOf("femenino") > -1){
+                        $("."+id+"").show();
+                    }else{
+                        $("."+id+"").hide();
+                    }
+                    break;
+                case "hombres":
+                    if(elem.outerText.indexOf("masculino") > -1){
+                        $("."+id+"").show();
+                    }else{
+                        $("."+id+"").hide();
+                    }
+                    break;
+                default:
+                    $("."+id+"").show();
+                    break;
+            }
+
+        });
+    });
+
     $("#reset").click(function () {
         users=[]
         $("#contenido").html("");
