@@ -35,11 +35,30 @@ $(function () {
         elems.forEach((elem) => {
             if (elem.outerText.indexOf("femenino") > -1) {
                 woman++;
-                elem.classList.add("table-warning");
+                elem.classList.add("table-danger");
             }
             if (elem.outerText.indexOf("masculino") > -1) {
                 man++;
-                elem.classList.add("table-primary");
+                elem.classList.add("table-success");
+            }
+        });
+
+        cartel("Cantidad de Personas","Existen "+man+" hombres y "+woman+" mujeres")
+    });
+
+    $("#travel").click(function () {
+        let man=0
+        let woman=0
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            var data=elem.querySelector(".age");
+            var age=parseInt(data.outerText)
+
+            if(age<18){
+                elem.classList.add("table-warning");
+            }
+            if(age>=18){
+                elem.classList.add("table-danger");
             }
         });
 
@@ -49,9 +68,9 @@ $(function () {
     function mostrar(user,age,gender){
             $("#contenido").append('<tr class="" id="'+ (users.length) + '"> \
                                         <th scope="row">'+ (users.length) + '</th> \
-                                        <td>Usuario'+ user + '</td>\
-                                        <td>'+ age + '</td>\
-                                        <td>'+ gender + '</td>\
+                                        <td class="user>Usuario'+ user + '</td>\
+                                        <td class="age">'+ age + '</td>\
+                                        <td class="gender">'+ gender + '</td>\
                                     </tr>')
     }
 
