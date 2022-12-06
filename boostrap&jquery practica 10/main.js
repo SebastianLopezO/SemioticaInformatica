@@ -28,7 +28,17 @@ $(function () {
         $("#max").prop("disabled",false);
     });
 
+    function disscolor(){
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            elem.classList.remove("table-success");
+            elem.classList.remove("table-warning");
+            elem.classList.remove("table-danger");
+        });
+    }
+
     $("#cont").click(function () {
+        disscolor()
         let man=0
         let woman=0
         const elems = document.querySelectorAll('#contenido tr');
@@ -47,6 +57,9 @@ $(function () {
     });
 
     $("#travel").click(function () {
+        disscolor()
+        let major=0
+        let minor=0
         const elems = document.querySelectorAll('#contenido tr');
         elems.forEach((elem) => {
             var data=elem.querySelector(".age");
@@ -54,13 +67,15 @@ $(function () {
 
             if(age<18){
                 elem.classList.add("table-warning");
+                minor++;
             }
             if(age>=18){
                 elem.classList.add("table-danger");
+                major++;
             }
         });
 
-        cartel("Cantidad de Personas","Existen "+man+" hombres y "+woman+" mujeres")
+        cartel("Cantidad de Personas por Edad","Existen "+major+" mayores de edad y "+minor+" menores de edad")
     });
 
     function mostrar(user,age,gender){
