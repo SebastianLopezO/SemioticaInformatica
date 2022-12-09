@@ -60,10 +60,34 @@
     <div class="container-fluid text-light p-5" style="background-color: #0D0D0D;">
         <div class="grid text-center container-sm">
             <div class="mb-3 dark-bg-text">
+                <label for="name" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre sin numeros" required>
+            </div>
+            <div class="mb-3 dark-bg-text">
+                <label for="lastname" class="form-label">Apellidos: </label>
+                <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido sin numeros"
+                    required>
+            </div>
+            <div class="mb-3 dark-bg-text">
+                <label for="birth" class="form-label">Fecha de nacimiento: </label>
+                <input type="date" class="form-control" id="birth" placeholder="Ingrese su fehca de nacimiento"
+                    required>
+            </div>
+            <div class="mb-3 dark-bg-text">
                 <div class="row align-items-start">
-                    <label for="max" class="form-label">Maximo: </label>
-                    <input type="number" class="form-control" id="max" placeholder="Numero Aleatorio sin repetir"
-                        value="10" required>
+                    <div class="col">
+                        <label for="email" class="form-label">Direccion de Correo</label>
+                        <input type="email" class="form-control" id="email"
+                            placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com" disabled>
+                    </div>
+                    <div class="col-4">
+                        <label for="domain" class="form-label">Dominio</label>
+                        <select class="form-select" aria-label="dominio" id="domain">
+                            <option selected value="">Seleccione su dominio</option>
+                            <option value="@gmail.com">gmail</option>
+                            <option value="@hotmail.com">hotmail</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="mb-3 dark-bg-text">
