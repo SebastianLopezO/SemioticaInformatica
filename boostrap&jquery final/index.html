@@ -11,6 +11,39 @@
 </head>
 
 <body>
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
+              <li><a href="#" class="nav-link px-2 link-dark">Products</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0D0D0D;">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://github.com/SebastianLopezO">
@@ -38,16 +71,16 @@
     <div class="container-fluid text-light p-5" style="background-color: #0D0D0D; min-height:50vh">
         <div class="grid text-center">
             <div class="mb-5">
-                <h1>Usuarios</h1>
+                <h1 id="student">Usuarios</h1>
             </div>
             <div class="p-5">
                 <table class="table table-dark table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col">Genero</th>
+                            <th scope="col">Nombre asignatura</th>
+                            <th scope="col">Notas</th>
+                            <th scope="col">Promedio</th>
                         </tr>
                     </thead>
                     <tbody id="contenido">
@@ -60,41 +93,9 @@
     <div class="container-fluid text-light p-5" style="background-color: #0D0D0D;">
         <div class="grid text-center container-sm">
             <div class="mb-3 dark-bg-text">
-                <label for="name" class="form-label">Nombre: </label>
-                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre sin numeros" required>
-            </div>
-            <div class="mb-3 dark-bg-text">
-                <label for="lastname" class="form-label">Apellidos: </label>
-                <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido sin numeros"
-                    required>
-            </div>
-            <div class="mb-3 dark-bg-text">
-                <label for="birth" class="form-label">Fecha de nacimiento: </label>
-                <input type="date" class="form-control" id="birth" placeholder="Ingrese su fehca de nacimiento"
-                    required>
-            </div>
-            <div class="mb-3 dark-bg-text">
-                <div class="row align-items-start">
-                    <div class="col">
-                        <label for="email" class="form-label">Direccion de Correo</label>
-                        <input type="email" class="form-control" id="email"
-                            placeholder="Ingrese su correo de dominio @hotmail.com o @gmail.com" disabled>
-                    </div>
-                    <div class="col-4">
-                        <label for="domain" class="form-label">Dominio</label>
-                        <select class="form-select" aria-label="dominio" id="domain">
-                            <option selected value="">Seleccione su dominio</option>
-                            <option value="@gmail.com">gmail</option>
-                            <option value="@hotmail.com">hotmail</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3 dark-bg-text">
-                <button class="btn btn-lg btn-primary m-2" id="generate">Generar</button>
+                <button class="btn btn-lg btn-primary m-2" id="insert">Insertar registros</button>
+                <button class="btn btn-lg btn-primary m-2" id="travel">Recorrer</button>
                 <button class="btn btn-lg btn-primary m-2" id="reset">Resetear</button>
-                <button class="btn btn-lg btn-primary m-2" id="cont">Contar</button>
-                <button class="btn btn-lg btn-primary m-2" id="travel">Resaltar</button>
             </div>
         </div>
     </div>
