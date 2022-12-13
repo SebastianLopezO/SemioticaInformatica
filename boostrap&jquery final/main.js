@@ -10,13 +10,19 @@ $(function () {
         }else{
             age>=18?img="img/woman.png":img="img/girl.png"
         }
+
+        if(age>=18){
+            var text="mayor"
+        }else{
+            var text="mayor"
+        }
         $("#ContentStudent").html('  <div class="col-md-4"> \
                                         <img src="'+img+'" class="img-fluid rounded-start" alt="'+gen+'"> \
                                     </div> \
                                     <div class="col-md-8"> \
                                     <div class="card-body"> \
                                         <h5 class="card-title">'+name+'</h5> \
-                                        <p class="card-text">El Estudiante con el nombre '+name+' tiene '+age+' años y es '+gen+'</p> \
+                                        <p class="card-text">El Estudiante con el nombre '+name+' es '+gen+' y tiene '+age+' años, por lo cual es '+text+' de edad </p> \
                                         <p class="card-text"><small class="text-muted">'+gen+'</small></p> \
                                     </div>');
     }
