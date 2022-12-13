@@ -1,5 +1,6 @@
 $(function () {
     generate()
+    var asig=[]
     function generate(){
         var name="Estudiante"+(Math.round(Math.random()*(5-1)+1))
         var gen=(["Hombre","Mujer"])[Math.round(Math.random()*(2-1)+1)-1]
@@ -25,5 +26,44 @@ $(function () {
                                         <p class="card-text">El Estudiante con el nombre '+name+' es '+gen+' y tiene '+age+' años, por lo cual es '+text+' de edad </p> \
                                         <p class="card-text"><small class="text-muted">'+gen+'</small></p> \
                                     </div>');
+    }
+
+    $("#insert").click(function () {
+        for(let i=0;i<10;i++){
+            insert()
+        }
+    });
+
+
+    function insert(){
+            let max=10;
+            let min=1;
+            do{
+                var num=Math.round(Math.random()*(max-min)+min)
+                if(asig.indexOf(num)<0 || asig.length==0){
+                    asig.push(num);
+                    let age=Math.round(Math.random()*(40-1)+1)
+                    let notas=[]
+                    for(let x=0;x<Math.round(Math.random()*(5-1)+1);x++){
+                        notas.push(Math.random()*(5-1)+1)
+                    }
+                    var sum=0
+                    var prom=0
+                    notas.forEach((elem)=> sum+=elem)
+                    prom=sum/notas.length
+
+                    $("#contenido").append('<tr class="" id="'+ (users.length) + '"> \
+                                                <th scope="row">'+ (users.length) + '</th> \
+                                                <td>Asignatura'+ num + '</td>\
+                                                <td>'+ notas + '</td>\
+                                                <td>'+ prom + '</td>\
+                                            </tr>');
+                    break;
+                }else if(asig.length==max){
+                    alerta("error","La lista ya esta llena");
+                    break;
+                }
+            }while(true);
+            $("#contenido").append('');
     }
 });
