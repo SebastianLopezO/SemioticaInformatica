@@ -44,7 +44,7 @@ $(function () {
                     asig.push(num);
                     let notas=[]
                     for(let x=0;x<Math.round(Math.random()*(5-1)+1);x++){
-                        notas.push((Math.random()*(5-1)+1).toFixed(2))
+                        notas.push(parseFloat((Math.random()*(5-1)+1).toFixed(2)))
                     }
                     var sum=0
                     var prom=0
