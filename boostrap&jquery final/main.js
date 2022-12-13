@@ -50,7 +50,7 @@ $(function () {
                     var sum=0
                     var prom=0
                     notas.forEach((elem)=> sum+=elem)
-                    prom=sum/notas.length
+                    prom=(sum/notas.length).toFixed(2)
 
                     $("#contenido").append('<tr class="" id="'+ (asig.length) + '"> \
                                                 <th scope="row">'+ (asig.length) + '</th> \
