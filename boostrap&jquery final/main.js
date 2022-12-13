@@ -45,7 +45,7 @@ $(function () {
                     let age=Math.round(Math.random()*(40-1)+1)
                     let notas=[]
                     for(let x=0;x<Math.round(Math.random()*(5-1)+1);x++){
-                        notas.push(Math.random()*(5-1)+1)
+                        notas.push((Math.random()*(5-1)+1).toFixed(2))
                     }
                     var sum=0
                     var prom=0
@@ -55,7 +55,7 @@ $(function () {
                     $("#contenido").append('<tr class="" id="'+ (asig.length) + '"> \
                                                 <th scope="row">'+ (asig.length) + '</th> \
                                                 <td>Asignatura'+ num + '</td>\
-                                                <td>'+ notas + '</td>\
+                                                <td>Cantidad de Notas:'+notas.length+'['+ notas + ']</td>\
                                                 <td>'+ prom + '</td>\
                                             </tr>');
                     break;
