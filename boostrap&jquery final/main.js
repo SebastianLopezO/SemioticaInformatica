@@ -15,7 +15,7 @@ $(function () {
         if(age>=18){
             var text="mayor"
         }else{
-            var text="mayor"
+            var text="menor"
         }
         $("#ContentStudent").html('  <div class="col-md-4"> \
                                         <img src="'+img+'" class="img-fluid rounded-start" alt="'+gen+'"> \
