@@ -34,6 +34,25 @@ $(function () {
         }
     });
 
+    $("#travel").click(function () {
+        let sum=0
+        const elems = document.querySelectorAll('#contenido tr');
+        elems.forEach((elem) => {
+            var data=elem.querySelector(".prom");
+            var prom=parseInt(data.outerText)
+
+            if (prom<3) {
+                elem.classList.add("table-danger");
+            }
+            if (prom>=3) {
+                elem.classList.add("table-success");
+            }
+
+            sum+=prom
+        });
+        promedio=parseFloat((sum/10).toFixed(2))
+    });
+
 
     function insert(){
             let max=10;
@@ -55,7 +74,7 @@ $(function () {
                                                 <th scope="row">'+ (asig.length) + '</th> \
                                                 <td>Asignatura'+ num + '</td>\
                                                 <td>Cantidad de Notas( '+notas.length+' ) : [ '+ notas + ' ] </td>\
-                                                <td>'+ prom + '</td>\
+                                                <td class="prom">'+ prom + '</td>\
                                             </tr>');
                     break;
                 }else if(asig.length==max){
