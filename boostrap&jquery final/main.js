@@ -52,8 +52,8 @@ $(function () {
                     notas.forEach((elem)=> sum+=elem)
                     prom=sum/notas.length
 
-                    $("#contenido").append('<tr class="" id="'+ (users.length) + '"> \
-                                                <th scope="row">'+ (users.length) + '</th> \
+                    $("#contenido").append('<tr class="" id="'+ (asig.length) + '"> \
+                                                <th scope="row">'+ (asig.length) + '</th> \
                                                 <td>Asignatura'+ num + '</td>\
                                                 <td>'+ notas + '</td>\
                                                 <td>'+ prom + '</td>\
