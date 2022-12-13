@@ -51,6 +51,7 @@ $(function () {
             sum+=prom
         });
         promedio=parseFloat((sum/10).toFixed(2))
+        cartel("Tu promedio del semestre fue de "+promedio)
     });
 
 
