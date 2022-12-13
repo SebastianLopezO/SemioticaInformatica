@@ -54,7 +54,7 @@ $(function () {
                     $("#contenido").append('<tr class="" id="'+ (asig.length) + '"> \
                                                 <th scope="row">'+ (asig.length) + '</th> \
                                                 <td>Asignatura'+ num + '</td>\
-                                                <td>Cantidad de Notas( '+notas.length+'): ['+ notas + '] </td>\
+                                                <td>Cantidad de Notas( '+notas.length+' ): [ '+ notas + ' ] </td>\
                                                 <td>'+ prom + '</td>\
                                             </tr>');
                     break;
