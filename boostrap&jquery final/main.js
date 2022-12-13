@@ -54,6 +54,10 @@ $(function () {
         cartel("Tu promedio del semestre fue de "+promedio)
     });
 
+    $("#reset").click(function(){
+        asig=[]
+        $("#contenido").html("");
+    })
 
     function insert(){
             let max=10;
