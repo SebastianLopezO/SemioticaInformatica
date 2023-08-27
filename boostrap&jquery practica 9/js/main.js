@@ -80,9 +80,9 @@ $(function () {
     });
     
     if (window.location.href.includes("usuario.html")) {
-        //for (let x = 1; x <= sessionStorage.length; x++) {
-            //var elem = JSON.parse(sessionStorage[x]) //dinamico
-            var elem = JSON.parse(sessionStorage[sessionStorage.length]) //unico elemento
+        for (let x = 1; x <= sessionStorage.length; x++) {
+            var elem = JSON.parse(sessionStorage[x]) //dinamico
+            /*var elem = JSON.parse(sessionStorage[sessionStorage.length])*/ //unico elemento
             var img = ""
             var type = ""
             if (elem.age >= 18) {
